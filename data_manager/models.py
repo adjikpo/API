@@ -53,12 +53,12 @@ class Resource(models.Model):
     
     # Informations principales
     title = models.CharField(max_length=500, help_text="Titre de la ressource")
-    description = models.TextField(blank=True, help_text="Description de la ressource")
+    description = models.TextField(blank=True, null=True, help_text="Description de la ressource")
     url = models.URLField(help_text="URL de téléchargement de la ressource")
     
     # Métadonnées du fichier
     format = models.CharField(max_length=50, help_text="Format du fichier (CSV, JSON, etc.)")
-    mime_type = models.CharField(max_length=100, blank=True, help_text="Type MIME du fichier")
+    mime_type = models.CharField(max_length=100, blank=True, null=True, help_text="Type MIME du fichier")
     file_size = models.BigIntegerField(null=True, blank=True, help_text="Taille du fichier en octets")
     
     # Status de traitement
